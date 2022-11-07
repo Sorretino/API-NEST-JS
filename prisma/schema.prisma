@@ -26,6 +26,23 @@ model Company {
   @@map("companys")
 }
 
+model Menu {
+  id    String @id @default(uuid())
+  title String
+  url   String
+
+  @@map("menus")
+}
+
+model Workgallery {
+  id         String @id @default(uuid())
+  title      String
+  image      String
+  id_company String
+
+  @@map("workgallerys")
+}
+
 model Book {
   id          String @id @default(uuid())
   title       String

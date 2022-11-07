@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/PrismaService';
 import { CompanyDTO } from './company.dto';
+
 @Injectable()
 export class CompanyService {
   constructor(private prisma:PrismaService){}
@@ -18,4 +19,6 @@ export class CompanyService {
     });
     return company;
   }
+
+
 }

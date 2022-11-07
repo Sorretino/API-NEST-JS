@@ -9,4 +9,5 @@ export class CompanyController {
 async create(@Body() data:CompanyDTO){
   return this.companyService.create(data);
 }
+
 }
