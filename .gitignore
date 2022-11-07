@@ -9,7 +9,7 @@ npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-package-lock.json*
+yarn.lock*
 lerna-debug.log*
 
 # OS
