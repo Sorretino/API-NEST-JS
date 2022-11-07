@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+//provider = "postgresql"
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  bar_code    String @unique
+
+  @@map("books")
+}
+
+model Post {
+  id               String @id @default(uuid())
+  title            String
+  description      String
+  description_long String
+  urlimage         String
+  url              String
+
+  @@map("posts")
+}
