@@ -3,9 +3,7 @@
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
-<p align="center">
-  <a href="https://www.mongodb.com/en" target="blank"><img src="https://www.josebernalte.com/wp-content/uploads/2018/02/mongoDB.png" width="420" alt="MongoDB Logo" /></a>
-</p>
+
 
 ## Description
 
