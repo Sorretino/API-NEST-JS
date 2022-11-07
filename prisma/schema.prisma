@@ -7,9 +7,22 @@ generator client {
 }
 
 datasource db {
-  provider          = "mysql"
-  url               = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  paragraph   String
+  object      String
+  solution    String
+  urlimage    String
+  url         String
+  color       String
+
+  @@map("companys")
 }
 
 model Book {
