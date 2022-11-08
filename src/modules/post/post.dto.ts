@@ -5,4 +5,5 @@ export type PostDTO = {
   description_long: string;
   urlimage: string;
   url: string;
+  position: string;
 };

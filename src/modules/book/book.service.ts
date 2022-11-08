@@ -4,26 +4,24 @@ import { BookDTO } from './book.dto';
 
 @Injectable()
 export class BookService {
-constructor(private prisma: PrismaService){}
+  constructor(private prisma: PrismaService) {}
 
-  async create(data:BookDTO){
+  async create(data: BookDTO) {
     const bookExists = await this.prisma.book.findFirst({
       where: {
         bar_code: data.bar_code,
       },
     });
 
-    if(bookExists){
+    if (bookExists) {
       throw new Error('Book alert exists');
     }
-const book = await this.prisma.book.create({
-  data,
-});
-
-   return book;
+    const book = await this.prisma.book.create({
+      data,
+    });
+    return book;
   }
-
-  async findAll(){
+  async findAll() {
     return this.prisma.book.findMany();
   }
   async update(id: string, data: BookDTO) {
@@ -62,7 +60,4 @@ const book = await this.prisma.book.create({
       },
     });
   }
-
-
-
 }

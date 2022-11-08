@@ -59,6 +59,7 @@ model Post {
   description_long String
   urlimage         String
   url              String
+  position         String
 
   @@map("posts")
 }

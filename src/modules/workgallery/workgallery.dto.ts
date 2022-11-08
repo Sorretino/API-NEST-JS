@@ -1,4 +1,4 @@
-export type WorkgalleryDTO ={
+export type WorkgalleryDTO = {
   id?: string;
   title: string;
   image: string;

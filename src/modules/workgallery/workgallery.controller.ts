@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  Delete,
+} from '@nestjs/common';
 import { WorkgalleryDTO } from './workgallery.dto';
 import { WorkgalleryService } from './workgallery.service';
 
@@ -12,5 +20,13 @@ export class WorkgalleryController {
   @Get()
   async findAll() {
     return this.workgalleryService.findAll();
+  }
+  @Put(':id')
+  async update(@Param('id') id: string, @Body() data: WorkgalleryDTO) {
+    return this.workgalleryService.update(id, data);
+  }
+  @Delete(':id')
+  async delete(@Param('id') id: string) {
+    return this.workgalleryService.delete(id);
   }
 }
