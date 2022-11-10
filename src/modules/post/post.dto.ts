@@ -3,7 +3,7 @@ export type PostDTO = {
   title: string;
   description: string;
   description_long: string;
-  urlimage: string;
+  urlImage: string;
   url: string;
   position: string;
 };

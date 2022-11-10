@@ -1,6 +1,6 @@
-export type MenuDTO = {
+export type SubmenuDTO = {
   id?: string;
   title: string;
   url: string;
-  order: string;
+  menuId: string;
 };

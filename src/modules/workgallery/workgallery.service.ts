@@ -19,7 +19,11 @@ export class WorkgalleryService {
     return workgallery;
   }
   async findAll() {
-    return this.prisma.workgallery.findMany();
+    return this.prisma.workgallery.findMany({
+      include: {
+        company: true,
+      },
+    });
   }
   async update(id: string, data: WorkgalleryDTO) {
     const workExists = await this.prisma.workgallery.findUnique({
@@ -43,6 +47,9 @@ export class WorkgalleryService {
     const workExists = await this.prisma.workgallery.findUnique({
       where: {
         id,
+      },
+      include: {
+        company: true,
       },
     });
 

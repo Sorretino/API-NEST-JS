@@ -13,38 +13,52 @@ datasource db {
 }
 
 model Company {
-  id          String @id @default(uuid())
+  id          String        @id @default(cuid())
   title       String
   description String
   paragraph   String
   object      String
   solution    String
-  urlimage    String
+  urlImage    String
   url         String
   color       String
+  Workgallery Workgallery[]
 
   @@map("companys")
 }
 
 model Menu {
-  id    String @id @default(uuid())
-  title String
-  url   String
+  id      String    @id @default(cuid())
+  title   String
+  url     String
+  order   String
+  Submenu Submenu[]
 
   @@map("menus")
 }
 
+model Submenu {
+  id     String @id @default(cuid())
+  title  String
+  url    String
+  menu   Menu   @relation(fields: [menuId], references: [id])
+  menuId String
+
+  @@map("submenus")
+}
+
 model Workgallery {
-  id         String @id @default(uuid())
-  title      String
-  image      String
-  id_company String
+  id        String  @id @default(cuid())
+  title     String
+  image     String
+  company   Company @relation(fields: [companyId], references: [id])
+  companyId String
 
   @@map("workgallerys")
 }
 
 model Book {
-  id          String @id @default(uuid())
+  id          String @id @default(cuid())
   title       String
   description String
   bar_code    String @unique
@@ -53,11 +67,11 @@ model Book {
 }
 
 model Post {
-  id               String @id @default(uuid())
+  id               String @id @default(cuid())
   title            String
   description      String
   description_long String
-  urlimage         String
+  urlImage         String
   url              String
   position         String
 
