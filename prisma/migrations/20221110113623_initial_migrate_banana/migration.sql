@@ -6,7 +6,7 @@ CREATE TABLE `companys` (
     `paragraph` VARCHAR(191) NOT NULL,
     `object` VARCHAR(191) NOT NULL,
     `solution` VARCHAR(191) NOT NULL,
-    `urlimage` VARCHAR(191) NOT NULL,
+    `urlImage` VARCHAR(191) NOT NULL,
     `url` VARCHAR(191) NOT NULL,
     `color` VARCHAR(191) NOT NULL,
 
